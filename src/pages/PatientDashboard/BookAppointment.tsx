@@ -1,7 +1,5 @@
-import DisplayDoctors from "@/components/DisplayDoctors";
+import DisplayDoctors from "@/pages/PatientDashboard/DisplayDoctors";
 
 export default function BookAppointment() {
-  return (
-    <DisplayDoctors />
-  )
+  return <DisplayDoctors />;
 }

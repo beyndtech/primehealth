@@ -16,6 +16,8 @@ import DoctorDashboard from "./pages/DoctorDashboard/DoctorDashboard";
 import ManagePatients from "./pages/DoctorDashboard/ManagePatients";
 import UpdateDoctorProfile from "./pages/DoctorDashboard/UpdateDoctorProfile";
 import DoctorProfile from "./components/DoctorProfileInfo";
+import DisplayDoctors from "./pages/PatientDashboard/DisplayDoctors";
+import PatientAppointments from "./pages/PatientDashboard/PatientAppointments";
 
 function App() {
   const { fetching, user } = contextData();
@@ -54,6 +56,8 @@ function App() {
 
     return (
       <Routes>
+        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/password-reset/:page" element={<PasswordReset />} />
         <Route path="*" element={<Navigate to="/dashboard/doctor" />} />
         <Route path="/dashboard/doctor/" element={<DrsLayout />}>
           <Route index element={<DoctorDashboard />} />
@@ -93,6 +97,8 @@ function App() {
 
     return (
       <Routes>
+        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/password-reset/:page" element={<PasswordReset />} />
         <Route path="*" element={<Navigate to="/dashboard/patient" />} />
         <Route path="/dashboard/patient/" element={<DefaultLayout />}>
           <Route index element={<PatientDashboard />} />
@@ -101,6 +107,18 @@ function App() {
             element={<PatientDashboard />}
           />
           <Route path="/dashboard/patient/profile" element={<Profile />} />
+          <Route
+            path="/dashboard/patient/settings"
+            element={<UpdatePatientProfile />}
+          />
+          <Route
+            path="/dashboard/patient/book-appointment"
+            element={<DisplayDoctors />}
+          />
+          <Route
+            path="/dashboard/patient/appointments"
+            element={<PatientAppointments />}
+          />
         </Route>
         <Route path="/login" element={<Navigate to="/dashboard/patient/" />} />
         <Route

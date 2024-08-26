@@ -1,6 +1,6 @@
 import ChartOne from "@/components/ChartOne";
 import ChartThree from "@/components/ChartThree";
-import DisplayDoctors from "@/components/DisplayDoctors";
+import DisplayDoctors from "@/pages/PatientDashboard/DisplayDoctors";
 import PageLoader from "@/components/PageLoader";
 import { contextData } from "@/context/AuthContext";
 
